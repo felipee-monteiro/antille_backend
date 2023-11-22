@@ -39,11 +39,9 @@ app.post('/contato', async function (req, res) {
         });
 
     } catch (e) {
-        console.log(e)
         if (e instanceof ValidationError) {
             return res.status(400).json({ errors: e.errors });
         }
-
         return res.status(500).json({ error: 'internal server error' });
     }
 });
