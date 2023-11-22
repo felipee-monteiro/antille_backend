@@ -16,9 +16,7 @@ app.use(express.json());
 app.use(helmet());
 
 app.post('/contato', async function (req, res) {
-    console.log(req.body);
     try {
-        
         const validator = object({
             email: string().required("E-mail Obrigatório").email("Verifique o formato do e-mail"),
             nome: string().required("Nome Obrigatório"),
